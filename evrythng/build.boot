@@ -22,14 +22,13 @@
 
 (deftask package []
   (comp
-    (download :url "https://raw.githubusercontent.com/evrythng/evrythng.js/673c6022600152c304dd923fed5569125c9e99a4/lib/evrythng.js" :checksum "5b200074d7347f66fcdafcc7724373d8")
-    (download :url "https://raw.githubusercontent.com/evrythng/evrythng.js/673c6022600152c304dd923fed5569125c9e99a4/lib/evrythng.min.js" :checksum "e95e2b1ce5fa370dca79cad1316ef253")
+    (download :url "https://d10ka0m22z5ju5.cloudfront.net/toolkit/evrythng-js-sdk/evrythng-4.7.1.js" :checksum "395a3cb965fc382ef9ce25f6d98c946e")
+    (download :url "https://d10ka0m22z5ju5.cloudfront.net/toolkit/evrythng-js-sdk/evrythng-4.7.1.min.js" :checksum "5ae5d1a8ba905d86cbc24f72f191b7e5")
 
-    (sift :move {(re-pattern (str "evrythng\\.min\\.js$")) "cljsjs/merge/production/evrythng.min.inc.js"})
-    (sift :move {(re-pattern (str "evrythng\\.js$")) "cljsjs/merge/development/evrythng.inc.js"})
+    (show :fileset true)
 
-    ; (minify :in "cljsjs/evrythng/development/evrythng.js"
-    ;          :out "cljsjs/evrythng/production/evrythng.min.js")
+    (sift :move {(re-pattern (str "evrythng-4\\.7\\.1\\.js$"))       "cljsjs/merge/development/evrythng.inc.js"})
+    (sift :move {(re-pattern (str "evrythng-4\\.7\\.1\\.min\\.js$")) "cljsjs/merge/production/evrythng.min.inc.js"})
 
     (sift :include #{#"^cljsjs"})
 
