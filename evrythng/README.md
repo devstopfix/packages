@@ -17,4 +17,10 @@ you can require the packaged library like so:
   (:require cljsjs.evrythng))
 ```
 
+## Build
+
+To build with boot, and install locally:
+
+    boot package install
+
 [flibs]: https://github.com/clojure/clojurescript/wiki/Packaging-Foreign-Dependencies

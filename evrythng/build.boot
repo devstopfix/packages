@@ -25,7 +25,7 @@
     (download :url "https://d10ka0m22z5ju5.cloudfront.net/toolkit/evrythng-js-sdk/evrythng-4.7.1.js" :checksum "395a3cb965fc382ef9ce25f6d98c946e")
     (download :url "https://d10ka0m22z5ju5.cloudfront.net/toolkit/evrythng-js-sdk/evrythng-4.7.1.min.js" :checksum "5ae5d1a8ba905d86cbc24f72f191b7e5")
 
-    (show :fileset true)
+    ;(show :fileset true)
 
     (sift :move {(re-pattern (str "evrythng-4\\.7\\.1\\.js$"))       "cljsjs/merge/development/evrythng.inc.js"})
     (sift :move {(re-pattern (str "evrythng-4\\.7\\.1\\.min\\.js$")) "cljsjs/merge/production/evrythng.min.inc.js"})
